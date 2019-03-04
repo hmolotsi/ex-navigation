@@ -61,7 +61,7 @@ export default class ExNavigationTabBar extends React.Component {
 
     return this.props.items.map((item, index) => {
       let { renderIcon, renderTitle } = item;
-      let isSelected = this.props.selectedTab === item.id;
+      let isSelected = (this.props.selectedTab === item.id) && !item.tabIsHidden;
 
       let title = null;
       if (item.title) {

@@ -304,6 +304,10 @@ class ExNavigationTab extends PureComponent<any, Props, State> {
         ..._.omit(tabItemProps, ['children']),
       };
 
+      if ( tabItemProps.tabIsHidden ) {
+        tabItem.tabIsHidden = true;
+      }
+
       if (Children.count(tabItemProps.children) > 0) {
         let child = Children.only(tabItemProps.children);
 
